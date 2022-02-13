@@ -38,11 +38,15 @@ const fonts = {
 
 const colors = {
   glassTeal: '#88CCCA',
+  light: '#F0E7DB',
+  dark: '#202023',
+  smoothLight: '#FFFFFF40',
+  smoothDark: '#20202380',
 };
 
 const config = {
   initialColorMode: 'dark',
-  useSystemColorMode: true,
+  useSystemColorMode: false,
 };
 
 const theme = extendTheme({
