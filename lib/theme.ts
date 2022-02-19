@@ -13,16 +13,22 @@ const styles = {
 const components = {
   Heading: {
     variants: {
-      'section-title': {
+      'card-title': {
         textDecoration: 'underline',
-        fontSize: 20,
+        fontSize: 16,
         textUnderlineOffset: 6,
         textDecorationColor: '#525252',
-        textDecorationThickness: 4,
-        marginTop: 3,
-        marginBottom: 4,
+        textDecorationThickness: 2,
+        marginBottom: 2,
       },
     },
+  },
+  Text: {
+    variants: {
+      'card-subtitle': {
+        lineHeight: 0
+      }
+    }
   },
   Link: {
     baseStyle: (props: Dict<any> | StyleFunctionProps) => ({
@@ -34,6 +40,7 @@ const components = {
 
 const fonts = {
   heading: "'M PLUS Rounded 1c'",
+  body: "'M PLUS Rounded 1c'"
 };
 
 const colors = {
@@ -41,7 +48,7 @@ const colors = {
   light: '#F0E7DB',
   dark: '#202023',
   smoothLight: '#FFFFFF40',
-  smoothDark: '#20202380',
+  smoothDark: '#20202380'
 };
 
 const config = {

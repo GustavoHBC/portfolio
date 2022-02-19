@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import styles from '../styles/Home.module.css';
+import {Heading} from '@chakra-ui/react'
 
 import Layout from '../components/layout';
 
@@ -8,7 +9,7 @@ const Home: NextPage = () => {
     <Layout>
       <div className={styles.container}>
         <main className={styles.main}>
-          <h1 className={styles.title}>Gustavo HBC</h1>
+          <Heading as="h2" variant="page-title">Gustavo HBC</Heading>
           <p className={styles.subtitle}>Portfolio WIP</p>
         </main>
       </div>

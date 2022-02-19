@@ -11,7 +11,7 @@ const Layout: NextComponentType = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
         <title>GustavoHBC</title>
       </Head>
-      <Container bg={useColorModeValue('light', 'dark')} maxW="container.md">{children}</Container>
+      <Container bg={useColorModeValue('light', 'dark')} py={10} maxW="container.md">{children}</Container>
     </Box>
   );
 };
