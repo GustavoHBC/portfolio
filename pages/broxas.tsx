@@ -13,7 +13,7 @@ const test = [
     image: 'https://github.com/GustavoHBC.png',
     game: {
       team1: {
-        score: 1,
+        score: 2,
         name: 'Dev'
       },
       team2: {
@@ -27,6 +27,22 @@ const test = [
     seniority: 'Júnior/Pleno',
     description: 'Focado',
     image: 'https://github.com/leoc9.png',
+    game: {
+      team1: {
+        score: 1,
+        name: 'Dev'
+      },
+      team2: {
+        score: 0,
+        name: 'JS'
+      },
+    }
+  },
+  {
+    name: 'Thommesani',
+    seniority: 'Júnior',
+    description: 'Tá sabendo demais',
+    image: 'https://github.com/matheusthm.png',
     game: {
       team1: {
         score: 1,
@@ -54,6 +70,22 @@ const test = [
       },
     }
   },
+  {
+    name: 'Xim',
+    seniority: 'Júnior',
+    description: 'Pintão',
+    image: 'https://github.com/thiago-a580.png',
+    game: {
+      team1: {
+        score: 1,
+        name: 'Dev'
+      },
+      team2: {
+        score: 0,
+        name: 'JS'
+      },
+    }
+  }
 ]
 
 const JsFight: NextPage = () => {

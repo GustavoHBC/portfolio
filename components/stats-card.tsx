@@ -28,8 +28,8 @@ const StatsCard: NextComponentType<{}, {}, IProps> = ({ children, name, seniorit
           <Heading as="h3" variant="card-title">
             {name}
           </Heading>
-          <Text as="p" fontSize={14} variant="card-text">Senioridade: {seniority}</Text>
-          <Text as="p" fontSize={10} variant="card-text">{description}</Text>
+          <Text as="p" fontSize={14} variant="card-subtitle">Senioridade: {seniority}</Text>
+          <Text as="p" fontSize={12}>{description}</Text>
         </Box>
       </Flex>
       {children}

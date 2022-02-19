@@ -26,7 +26,7 @@ const components = {
   Text: {
     variants: {
       'card-subtitle': {
-        lineHeight: 0
+        lineHeight: 4
       }
     }
   },
