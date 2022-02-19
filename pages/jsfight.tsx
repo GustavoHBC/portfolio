@@ -63,8 +63,8 @@ const JsFight: NextPage = () => {
         Inimigos do Javascript
       </Heading>
       <SimpleGrid columns={2} spacingX="20px" spacingY="20px" py={4}>
-        {test.map(({game, ...data}) => (
-          <StatsCard {...data}>
+        {test.map(({game, ...data}, index) => (
+          <StatsCard key={`jsfight-${index}`} {...data}>
             <ScorePanel {...game} />
           </StatsCard>
         ))}
