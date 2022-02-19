@@ -23,6 +23,7 @@ const nextConfig = {
     domains: siteKeys.map(siteKey => (
       {
         domain: sites[siteKey].domain,
+        locales: ['en', 'pt-br']
       }
     ))
   },
