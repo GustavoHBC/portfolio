@@ -2,34 +2,51 @@
 
 const sites = {
   portfolio: {
-    domain: 'gushbc.dev'
+    domain: 'gushbc.dev',
+    locales: {
+      'pt-br': { title: 'Portfolio', description: 'GustavoHBC' },
+      en: { title: 'Portfolio', description: 'GustavoHBC' },
+    },
   },
   broxas: {
-    domain: 'broxas.gushbc.dev'
+    domain: 'broxas.gushbc.dev',
+    locales: {
+      'pt-br': { title: 'Os broxinhas', description: '.' },
+      en: { title: 'The little broxas', description: 'teste' },
+    },
   },
 };
 
 const siteKeys = Object.keys(sites);
+const locales = ['en', 'pt-br'];
 
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['github.com']
+    domains: ['github.com'],
   },
   publicRuntimeConfig: {
-    sites
+    sites,
+    locales,
   },
   i18n: {
-    domains: siteKeys.map(siteKey => (
-      {
-        domain: sites[siteKey].domain,
-        locales: ['en', 'pt-br']
-      }
-    ))
+    locales: siteKeys,
+    defaultLocale: siteKeys[0],
+    domains: siteKeys.map(siteKey => ({
+      domain: sites[siteKey].domain,
+      defaultLocale: siteKey,
+    })),
   },
+  // redirects: () => [
+  //   {
+  //     source: '/',
+  //     destination: `/${pseudoLocales[0]}`,
+  //     permanent: true,
+  //   },
+  // ],
   future: {
-    webpack5: true
-  }
+    webpack5: true,
+  },
 };
 
 module.exports = nextConfig
