@@ -20,7 +20,7 @@ const Index: NextPage<Props> = ({ wildcard }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
-  let wildcard = req.headers.host ? req.headers.host.split('.')[0] : 'home';
+  let wildcard = req.headers.host && req.headers.host.split('.')[0];
 
   return { props: { wildcard } };
 };

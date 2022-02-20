@@ -3,22 +3,17 @@
 const sites = {
   portfolio: {
     domain: 'gushbc.dev',
-    locales: {
-      'pt-br': { title: 'Portfolio', description: 'GustavoHBC' },
-      en: { title: 'Portfolio', description: 'GustavoHBC' },
-    },
-  },
+    title: 'GustavoHBC',
+    description: 'Portfolio'
+  },  
   broxas: {
     domain: 'broxas.gushbc.dev',
-    locales: {
-      'pt-br': { title: 'Os broxinhas', description: '.' },
-      en: { title: 'The little broxas', description: 'teste' },
-    },
+    title: 'Os broxinhas',
   },
 };
 
 const siteKeys = Object.keys(sites);
-const locales = ['en', 'pt-br'];
+const locales = ['pt-br', 'en'];
 
 const nextConfig = {
   reactStrictMode: true,
@@ -47,7 +42,7 @@ const nextConfig = {
       source: '/broxas',
       destination: '/',
       permanent: true,
-    },
+    }
   ],
   future: {
     webpack5: true,
