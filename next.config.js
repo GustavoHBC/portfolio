@@ -37,13 +37,18 @@ const nextConfig = {
       defaultLocale: siteKey,
     })),
   },
-  // redirects: () => [
-  //   {
-  //     source: '/',
-  //     destination: `/${pseudoLocales[0]}`,
-  //     permanent: true,
-  //   },
-  // ],
+  redirects: () => [
+    {
+      source: '/home',
+      destination: '/',
+      permanent: true,
+    },
+    {
+      source: '/broxas',
+      destination: '/',
+      permanent: true,
+    },
+  ],
   future: {
     webpack5: true,
   },

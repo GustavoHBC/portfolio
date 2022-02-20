@@ -1,20 +1,28 @@
-import type { NextPage } from 'next';
-import styles from '../styles/Home.module.css';
-import {Heading} from '@chakra-ui/react'
+import type { NextPage, GetServerSideProps } from 'next';
+import Home from './home';
+import Broxas from './broxas';
 
-import Layout from '../components/layout';
+interface Props {
+  wildcard?: string;
+}
 
-const Home: NextPage = () => {
-  return (
-    <Layout>
-      <div className={styles.container}>
-        <main className={styles.main}>
-          <Heading as="h2" variant="page-title">Gustavo HBC</Heading>
-          <p className={styles.subtitle}>Portfolio WIP</p>
-        </main>
-      </div>
-    </Layout>
-  );
+type TPageHandler = {
+  [key: string]: JSX.Element;
 };
 
-export default Home;
+const Index: NextPage<Props> = ({ wildcard }) => {
+  const pageHandler: TPageHandler = {
+    broxas: <Broxas />,
+    home: <Home />,
+  };
+
+  return pageHandler[wildcard || 'home'];
+};
+
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+  let wildcard = req.headers.host ? req.headers.host.split('.')[0] : 'home';
+
+  return { props: { wildcard } };
+};
+
+export default Index;
