@@ -16,7 +16,7 @@ const Index: NextPage<Props> = ({ wildcard }) => {
     home: <Home />,
   };
 
-  return pageHandler[wildcard || 'home'];
+  return pageHandler[wildcard && pageHandler[wildcard] ? wildcard : 'home'];
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
