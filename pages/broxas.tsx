@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import type { NextPage } from 'next';
 import { Heading, SimpleGrid } from '@chakra-ui/react';
 
@@ -5,97 +6,54 @@ import Layout from '../components/layout';
 import StatsCard from 'components/stats-card';
 import ScorePanel from 'components/score-panel';
 
-const test = [
-  {
-    name: 'Gut',
-    seniority: 'Pleno',
-    description: 'In code we trust',
-    image: 'https://github.com/GustavoHBC.png',
-    game: {
-      team1: {
-        score: 2,
-        name: 'Dev'
-      },
-      team2: {
-        score: 0,
-        name: 'JS'
-      },
+type TGames = {
+  name: string
+  seniority: string
+  description: string
+  image: string
+  game: {
+    id: number
+    team1: {
+      score: number
+      name: string
     }
-  },
-  {
-    name: 'Léo',
-    seniority: 'Júnior/Pleno',
-    description: 'Focado',
-    image: 'https://github.com/leoc9.png',
-    game: {
-      team1: {
-        score: 1,
-        name: 'Dev'
-      },
-      team2: {
-        score: 0,
-        name: 'JS'
-      },
-    }
-  },
-  {
-    name: 'Thommesani',
-    seniority: 'Júnior',
-    description: 'Tá sabendo demais',
-    image: 'https://github.com/matheusthm.png',
-    game: {
-      team1: {
-        score: 1,
-        name: 'Dev'
-      },
-      team2: {
-        score: 0,
-        name: 'JS'
-      },
-    }
-  },
-  {
-    name: 'Gaeta',
-    seniority: 'Júnior',
-    description: 'Burro',
-    image: 'https://github.com/jpgaeta.png',
-    game: {
-      team1: {
-        score: 1,
-        name: 'Dev'
-      },
-      team2: {
-        score: 0,
-        name: 'JS'
-      },
-    }
-  },
-  {
-    name: 'Xim',
-    seniority: 'Júnior',
-    description: 'Pintão',
-    image: 'https://github.com/thiago-a580.png',
-    game: {
-      team1: {
-        score: 1,
-        name: 'Dev'
-      },
-      team2: {
-        score: 0,
-        name: 'JS'
-      },
+    team2: {
+      score: number
+      name: string
     }
   }
-]
+}
 
 const JsFight: NextPage = () => {
+  const [games, setGames] = useState<Array<TGames>>([]);
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('/api/broxas', {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+
+      const gamesJson = await response.json();
+      setGames(gamesJson);
+    }
+
+    fetchData();
+  }, []);
+
   return (
     <Layout>
       <Heading as="h2" variant="page-title" textAlign="center">
         Inimigos do Javascript
       </Heading>
-      <SimpleGrid columns={2} spacingX="20px" spacingY="20px" py={4}>
-        {test.map(({game, ...data}, index) => (
+      <SimpleGrid columns={2} minChildWidth='320px' spacingX="20px" spacingY="20px" py={4}>
+        {games.map(({game, ...data}, index) => (
           <StatsCard key={`jsfight-${index}`} {...data}>
             <ScorePanel {...game} />
           </StatsCard>
