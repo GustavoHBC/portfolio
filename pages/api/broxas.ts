@@ -16,7 +16,7 @@ const test = async (
       game: {
         id: 1,
         team1: {
-          score: 2,
+          score: 0,
           name: 'Dev'
         },
         team2: {
