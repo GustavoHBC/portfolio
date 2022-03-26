@@ -1,0 +1,96 @@
+db.getCollection("players").insertMany([
+  {
+    name: `Gut`,
+    seniority: 'Pleno',
+    description: 'In code we trust',
+    image: 'https://github.com/GustavoHBC.png',
+    gameId: 1
+  },
+  {
+    name: 'Léo',
+    seniority: 'Júnior/Pleno',
+    description: 'Focado',
+    image: 'https://github.com/leoc9.png',
+    gameId: 2
+  },
+  {
+    name: 'Thommesani',
+    seniority: 'Júnior',
+    description: 'Tá sabendo demais',
+    image: 'https://github.com/matheusthm.png',
+    gameId: 3
+  },
+  {
+    name: 'Gaeta',
+    seniority: 'Júnior',
+    description: 'Burro',
+    image: 'https://github.com/jpgaeta.png',
+    gameId: 4
+  },
+  {
+    name: 'Xim',
+    seniority: 'Júnior',
+    description: 'Pintão',
+    image: 'https://github.com/thiago-a580.png',
+    gameId: 5
+  }
+]);
+
+db.getCollection("matches").insertMany([
+  {
+    id: 1,
+    team1: {
+      score: 0,
+      name: 'Dev',
+    },
+    team2: {
+      score: 0,
+      name: 'JS',
+    },
+  },
+  {
+    id: 2,
+    team1: {
+      score: 0,
+      name: 'Dev',
+    },
+    team2: {
+      score: 0,
+      name: 'JS',
+    },
+  },
+  {
+    id: 3,
+    team1: {
+      score: 0,
+      name: 'Dev',
+    },
+    team2: {
+      score: 0,
+      name: 'JS',
+    },
+  },
+  {
+    id: 4,
+    team1: {
+      score: 0,
+      name: 'Dev',
+    },
+    team2: {
+      score: 0,
+      name: 'JS',
+    },
+  },
+  {
+    id: 5,
+    team1: {
+      score: 0,
+      name: 'Dev',
+    },
+    team2: {
+      score: 0,
+      name: 'JS',
+    },
+  },
+]);
+

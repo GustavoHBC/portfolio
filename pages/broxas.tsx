@@ -42,6 +42,7 @@ const JsFight: NextPage = () => {
 
       const gamesJson = await response.json();
       setGames(gamesJson);
+      // setGames([]);
     }
 
     fetchData();
@@ -53,7 +54,7 @@ const JsFight: NextPage = () => {
         Inimigos do Javascript
       </Heading>
       <SimpleGrid columns={2} minChildWidth='320px' spacingX="20px" spacingY="20px" py={4}>
-        {games.map(({game, ...data}, index) => (
+        {Array.isArray(games) && games.map(({game, ...data}, index) => (
           <StatsCard key={`jsfight-${index}`} {...data}>
             <ScorePanel {...game} />
           </StatsCard>

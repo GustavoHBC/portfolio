@@ -47,6 +47,9 @@ const nextConfig = {
   future: {
     webpack5: true,
   },
+  env: {
+    mongodburl: "mongodb+srv://gushbc:g1h2g3@cluster0.22bdi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  }
 };
 
 module.exports = nextConfig
