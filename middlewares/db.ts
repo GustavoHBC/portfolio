@@ -1,6 +1,9 @@
 import mongoose from 'mongoose';
+import { NextRequest, NextResponse } from 'next/server';
 
-const connectDB = (handler: any) => async (req: any, res: any) => {
+type THandler = (req: NextRequest, res: NextResponse) => void;
+
+const connectDB = (handler: THandler) => async (req: NextRequest, res: NextResponse) => {
   const DB_CONN_STRING = process.env.DB_CONN_STRING;
 
   if (!DB_CONN_STRING) {
