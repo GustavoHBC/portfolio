@@ -46,9 +46,6 @@ const nextConfig = {
   ],
   future: {
     webpack5: true,
-  },
-  env: {
-    DB_CONN_STRING: "mongodb+srv://gushbc:7ZcKuoiMf4CBHXVf@cluster0.22bdi.mongodb.net/portfolio?retryWrites=true&w=majority",
   }
 };
 
