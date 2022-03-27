@@ -48,7 +48,7 @@ const nextConfig = {
     webpack5: true,
   },
   env: {
-    mongodburl: "mongodb+srv://gushbc:g1h2g3@cluster0.22bdi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    DB_CONN_STRING: "mongodb+srv://gushbc:7ZcKuoiMf4CBHXVf@cluster0.22bdi.mongodb.net/portfolio?retryWrites=true&w=majority",
   }
 };
 
