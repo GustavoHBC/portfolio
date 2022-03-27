@@ -24,16 +24,16 @@ interface IMatches {
   }
 }
 
-export const getStaticProps = async () => {
-  const response = await fetch('/api/broxas');
-  const matches = await response.json();
-  console.log(matches)
-  return {
-    props: { matches }
-  }
-}
+// export const getStaticProps = async () => {
+//   const response = await fetch('/api/broxas');
+//   const matches = await response.json();
+//   console.log(matches)
+//   return {
+//     props: { matches }
+//   }
+// }
 
-const JsFight: NextPage<any> = ({matches: asd}) => {
+const JsFight: NextPage = () => {
   const [matches, setMatches] = useState<Array<IMatches>>([]);
   
   useEffect(() => {
@@ -53,7 +53,7 @@ const JsFight: NextPage<any> = ({matches: asd}) => {
         Inimigos do Javascript
       </Heading>
       <SimpleGrid columns={2} minChildWidth='game' spacingX="20px" spacingY="20px" py={4}>
-        {Array.isArray(asd) && asd.map(({game, ...data}, index) => (
+        {Array.isArray(matches) && matches.map(({game, ...data}, index) => (
           <StatsCard key={`jsfight-${index}`} {...data}>
             <ScorePanel {...game} />
           </StatsCard>
